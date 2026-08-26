@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL here](https://github.com/Rafman0/Article-preview-component)
-- Live Site URL: [live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site URL here](https://rafman0.github.io/Article-preview-component/)
 
 
 ### Built with
