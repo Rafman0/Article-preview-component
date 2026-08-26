@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Article preview component</title>
+  <meta name="description" content="Article preview component with a social sharing menu — a Frontend Mentor challenge solution.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <main>
+    <article class="card">
+      <div class="card-media">
+        <img src="./images/drawers.jpg" alt="Bright room featuring a chest of drawers decorated with a mirror, plants and ornaments">
+      </div>
+
+      <div class="card-body">
+        <h1 class="card-title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+
+        <p class="card-text">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I&rsquo;ve got some simple tips to help you make any room feel complete.</p>
+
+        <footer class="card-footer">
+          <img class="avatar" src="./images/avatar-michelle.jpg" alt="Michelle Appleton" width="40" height="40">
+          <p class="byline">
+            <span class="author">Michelle Appleton</span>
+            <span class="date"><time datetime="2020-06-28">28 Jun 2020</time></span>
+          </p>
+
+          <div class="share">
+            <button class="share-btn" type="button" id="share-toggle" aria-expanded="false" aria-controls="share-menu" aria-label="Share this article">
+              <img src="./images/icon-share.svg" alt="" width="15" height="13">
+            </button>
+
+            <div class="share-menu" id="share-menu">
+              <span class="share-label" aria-hidden="true">Share</span>
+              <ul class="social-list">
+                <li>
+                  <a class="social-link" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/icon-facebook.svg" alt="" width="20" height="20">
+                    <span class="sr-only">Share on Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social-link" href="https://twitter.com/intent/tweet" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/icon-twitter.svg" alt="" width="20" height="17">
+                    <span class="sr-only">Share on Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social-link" href="https://www.pinterest.com/pin/create/button/" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/icon-pinterest.svg" alt="" width="20" height="20">
+                    <span class="sr-only">Share on Pinterest</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>.
+    Coded by <a href="#">Abdulrafiu Mohammed</a>.
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* ============ Custom properties ============ */
+:root {
+  --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-desaturated-dark-blue: hsl(214, 17%, 51%);
+  --clr-grayish-blue: hsl(212, 23%, 69%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+  --font-main: "Manrope", sans-serif;
+}
+
+/* ============ Reset / base ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--clr-light-grayish-blue);
+  font-family: var(--font-main);
+  font-size: 0.8125rem; /* 13px body copy per style guide */
+  line-height: 1.65;
+  color: var(--clr-desaturated-dark-blue);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--clr-desaturated-dark-blue);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============ Card (mobile-first) ============ */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 327px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 14px 28px hsl(217 19% 35% / 0.12);
+}
+
+.card-media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 2.25rem 2rem 1.25rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  color: var(--clr-very-dark-grayish-blue);
+}
+
+.card-text {
+  margin-top: 0.875rem;
+  color: var(--clr-desaturated-dark-blue);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.byline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.3;
+}
+
+.author {
+  font-weight: 700;
+  color: var(--clr-very-dark-grayish-blue);
+}
+
+.date {
+  color: var(--clr-grayish-blue);
+}
+
+/* ============ Share ============ */
+.share {
+  margin-left: auto;
+}
+
+.share-btn {
+  position: relative;
+  z-index: 2; /* stays clickable above the mobile share bar */
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--clr-light-grayish-blue);
+  transition: background-color 0.25s ease;
+}
+
+.share-btn:hover {
+  background-color: hsl(210, 30%, 85%);
+}
+
+.share-btn img {
+  transition: filter 0.25s ease;
+}
+
+.share-btn[aria-expanded="true"] {
+  background-color: var(--clr-very-dark-grayish-blue);
+}
+
+.share-btn[aria-expanded="true"] img {
+  filter: brightness(0) invert(1);
+}
+
+.share-menu {
+  position: absolute;
+  inset: auto 0 0 0; /* full-width bar pinned to the card bottom on mobile */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.375rem;
+  min-height: 76px;
+  padding: 0 2rem;
+  border-radius: 0 0 10px 10px;
+  background-color: var(--clr-very-dark-grayish-blue);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.share-btn[aria-expanded="true"] + .share-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.share-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--clr-grayish-blue);
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-link {
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+  opacity: 0.6;
+}
+
+/* ============ Attribution ============ */
+.attribution {
+  position: fixed;
+  inset: auto 0 0.5rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ============ Desktop layout ============ */
+@media (min-width: 600px) {
+  .card {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    max-width: 730px;
+  }
+
+  .card-media img {
+    height: 100%;
+    min-height: 280px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card-body {
+    padding: 2.5rem 2.5rem 2rem 3rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .share {
+    position: relative;
+  }
+
+  /* Popover anchored above the share button */
+  .share-menu {
+    inset: auto;
+    right: 50%;
+    bottom: calc(100% + 1.4rem);
+    transform: translateX(50%) translateY(6px);
+    width: max-content;
+    min-height: 0;
+    padding: 1.125rem 2.125rem;
+    border-radius: 10px;
+  }
+
+  .share-btn[aria-expanded="true"] + .share-menu {
+    transform: translateX(50%) translateY(0);
+  }
+
+  /* Tooltip arrow */
+  .share-menu::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50% 0;
+    border: 10px solid transparent;
+    border-top-color: var(--clr-very-dark-grayish-blue);
+    opacity: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
